@@ -1137,52 +1137,120 @@
 
 # Krestiki noliki-------------------------------------------------------
 
-player1 = "X"
-player2 = "O"
+# player1 = "X"
+# player2 = "O"
+#
+# board = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+# def display_board(board):
+#     print("\n\t", board[0], "|", board[1], "|", board[2])
+#     print("\t", "----------")
+#     print("\t", board[3], "|", board[4], "|", board[5])
+#     print("\t", "----------")
+#     print("\t", board[6], "|", board[7], "|", board[8])
+#     print("\t")
+# display_board(board)
+#
+# def take_turn (player):
+#     while True:
+#         player_turn = int(input(f"{player} turn! Please enter number (0 - 8): "))
+#         if 0 <= player_turn <= 8 and board[player_turn] not in [player1, player2]:
+#             board[player_turn] = player
+#             break
+#         else:
+#             print("Invalid input! Try again!")
+#     display_board(board)
+#
+# # win situations:
+# def win_situations():
+#     if (board[0] == board[1] == board[2])\
+#             or (board[3] == board[4] == board[5])\
+#             or (board[6] == board[7] == board[8])\
+#             or (board[0] == board[4] == board[8])\
+#             or (board[2] == board[4] == board[6]):
+#         return True
+# win_situations()
+#
+# for _ in range(5):
+#     take_turn(player1)
+#     if win_situations():
+#         print(f"{player1} win win congratulations!!")
+#         break
+#     take_turn(player2)
+#     if win_situations():
+#         print(f"{player2} win win congratulations!!")
+#         break
+# print("Game Over!")
 
-board = [0, 1, 2, 3, 4, 5, 6, 7, 8]
-def display_board(board):
-    print("\n\t", board[0], "|", board[1], "|", board[2])
-    print("\t", "----------")
-    print("\t", board[3], "|", board[4], "|", board[5])
-    print("\t", "----------")
-    print("\t", board[6], "|", board[7], "|", board[8])
-    print("\t")
-display_board(board)
+# from OOP import Product
+# from OOP import Fruits
+# apple = Product(name="apple", category="food", quantity=15)
+# bananas = Fruits
+# print(apple.quantity)
+# print(bananas.in_gategory)
 
-def take_turn (player):
-    while True:
-        player_turn = int(input(f"{player} turn! Please enter number (0 - 8): "))
-        if 0 <= player_turn <= 8 and board[player_turn] not in [player1, player2]:
-            board[player_turn] = player
-            break
-        else:
-            print("Invalid input! Try again!")
-    display_board(board)
+# from OOP import Rectangle
+# r1 = Rectangle(width=3, height=8)
+# print(r1.get_area())
+#
+# r2 = Rectangle(width=6, height=58)
+# print(r2.get_area())
+#---------------------------------------------------------------------
+# from OOP import Cat
+# cat1 = Cat(name="Барон", sex="мальчик", age=2)
+# cat2 = Cat(name="Сэм", sex="мальчик", age=2)
+# print("Первый кот:", cat1.age)
+# print("Второй кот:", cat2.sex)
+#
+# class Dog(Cat):
+#     def get_pet(self):
+#         return f"{self.get_name()}, {self.get_age()}"
+# dog1 = Dog(name="Barbos", age=52, sex="malchik")
+# print(dog1.get_pet())
 
-# win situations:
-def win_situations():
-    if (board[0] == board[1] == board[2])\
-            or (board[3] == board[4] == board[5])\
-            or (board[6] == board[7] == board[8])\
-            or (board[0] == board[4] == board[8])\
-            or (board[2] == board[4] == board[6]):
-        return True
-win_situations()
+# class Cat:
+#     def __init__(self, name, sex, age):
+#         self.name = name
+#         self.sex = sex
+#         self.age = age
+#
+# cat1 = Cat(name="Барон", sex="мальчик", age=2)
+# cat2 = Cat(name="Сэм", sex="мальчик", age=2)
+# print("Первый кот:", cat1.age)
+# print("Второй кот:", cat2.sex)
+#
+# class Dog(Cat):
+#     def get_pet(self):
+#         return f"{self.name}, {self.age}"
+#
+# dog1 = Dog(name="Barbos", age=52, sex="malchik")
+# print(dog1.get_pet())
 
-for _ in range(5):
-    take_turn(player1)
-    if win_situations():
-        print(f"{player1} win win congratulations!!")
-        break
-    take_turn(player2)
-    if win_situations():
-        print(f"{player2} win win congratulations!!")
-        break
-print("Game Over!")
-
-
-
+# from OOP import Rectangle, Square, Circle
+# rect1 = Rectangle(3, 4)
+# rect2 = Rectangle(3,4)
+# print("Ploshad prjamougolnika 1: ", rect1.get_area_rectangle())
+# print("Ploshad prjamougolnika 2: ",rect2.get_area_rectangle())
+#
+# sqr1 = Square(5)
+# sqr2 = Square(10)
+# print("Ploshad kvadrata 1: ", sqr1.get_area_square())
+# print("Ploshad kvadrata 2: ", sqr2.get_area_square())
+#
+# circle1 = Circle(8)
+# circle2 = Circle(21)
+#
+# print("Ploshad kruga 1: ", circle1.get_area_circle())
+# print("Ploshad kruga 2: ", circle2.get_area_circle())
+#
+# figures = [rect1, rect2, sqr1, sqr2, circle1, circle2]
+# for figure in figures:
+#     if isinstance(figure, Square):
+#         print(figure.get_area_square())
+#     elif isinstance(figure, Circle):
+#         print(figure.get_area_circle())
+#     else:
+#         print(figure.get_area_rectangle())
+# print(rect1==rect2)
 
 
 
