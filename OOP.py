@@ -634,15 +634,49 @@
 # except ValueError:
 #     print("neee")
 
-try:
-    y, x, d = map(int,input().split())
-    print(y, x, d)
-    res = x / d
-except ValueError as h:
-    print(h)
-except ArithmeticError as h:
-    print(h)
-else:
-    print("no errors sir")
-finally:
-    print("game over")
+# try:
+#     y, x, d = map(int,input().split())
+#     print(y, x, d)
+#     res = x / d
+# except ValueError as h:
+#     print(h)
+# except ArithmeticError as h:
+#     print(h)
+# else:
+#     print("no errors sir")
+# finally:
+#     print("game over")
+
+# class MyException(Exception):
+#     pass
+# try:
+#     y, x, d = map(int, input().split())
+#     print(y, x, d)
+#     res = x / d
+#     raise MyException("Message")
+# except MyException as e:
+#     print(e)
+
+# class MyException(Exception):  # создаём пустой класс – исключения
+#     pass
+# try:
+#     b=7
+#     c=9
+#     a = b + c
+#     print(a)
+#     raise MyException("message")  # поднимаем наше исключение
+# except MyException as e:  # ловим его за хвост как шкодливого котёнка
+#     print(e)  # выводим информацию об исключении
+
+class NonePositiveDigitException(ValueError):
+    pass
+class Sqaure():
+    def __init__(self, a=0, b=0):
+        self.a = a
+        self.b = b
+    def square_area(self, a, b):
+        if a <= 0 or b <= 0:
+            raise NonePositiveDigitException("Nepravilnaja storona kvadrata")
+        return a * b
+sq = Sqaure()
+print(sq.square_area(8, 5))
