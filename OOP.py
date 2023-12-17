@@ -682,5 +682,18 @@
 # print(sq.square_area(8, 5))
 # import math
 # print(math.trunc(math.fmod(math.fabs(-10000000), 55)+0.3))
-import time
-print(help(time))
+
+# print(time.ctime())
+# print(time.time())
+# print(time.gmtime())
+# print(time.localtime())
+# print(time.monotonic())
+# print(time.strftime("%H:%M:%S %Y"))
+# print(time.ctime())
+# import time
+# i = 10
+# while i >= 0:
+#     print(i)
+#     time.sleep(1)
+#     i -= 1
+# print("Vremja vyshlo!!!")
