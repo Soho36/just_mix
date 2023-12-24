@@ -1,21 +1,33 @@
-
-
-
-
+import random
+class Config:
+    grid_size = 6
 class Gameboard:
-    def __init__(self, grid_size):
-       self.grid_size = grid_size
     def show_board(self):
-        grid_size = 6
-        board = [["•" for _ in range(grid_size)] for _ in range(grid_size)]
-        print(board)
-        print("\n")
-        print(" |" + "|".join(str(i) for i in range(1, grid_size + 1)) + "|")  # Column numbers
+        board = [["•" for _ in range(Config.grid_size)] for _ in range(Config.grid_size)] # board as a list in the list
+        # print("\n")
+        print("  " + "|".join(list(map(str, range(1, Config.grid_size + 1))))) # board header
+        n = 0       # board cells and row numbers
+        for i in board:
+            n += 1
+            print(n, "|".join(i))
 
-        for i, row in enumerate(board, start=1):
-            print(f"{i}|{'|'.join(row)}|")
-gb = Gameboard(6)
-gb.show_board()
+gbrd = Gameboard()
+gbrd.show_board()
 
-# class Ship:
-#     def __init__(self, position, coords, ):
+
+class Ship:
+    def __init__(self, size):
+        self.size = size
+        self.startpoint = None
+        self.orientation = None
+
+    def place_ship_randomly(self):
+        self.startpoint = (random.randint(1, Config.grid_size), random.randint(1, Config.grid_size))
+        self.orientation = random.choice(["vertical", "horizontal"])
+
+ship1 = Ship(3)
+ship2 = Ship(2)
+ship3 = Ship(1)
+ship1.place_ship_randomly()
+ship2.place_ship_randomly()
+ship3.place_ship_randomly()
