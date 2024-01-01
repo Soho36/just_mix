@@ -8,12 +8,15 @@ class Chassis:
         return self.chassis_type
 
     def motor_attachment(self, motor_object):
-        if self.motor_placement == None and self.motor_attached is False:
-            self.motor_placement = motor_object
-            self.motor_attached = True
-            print(f"{motor_object} motor was successfully attached to the chassis")
+        if motor_object.gearbox_placement is not None:
+            if self.motor_placement == None and self.motor_attached is False:
+                self.motor_placement = motor_object
+                self.motor_attached = True
+                print(f"{motor_object} motor was successfully attached to the chassis")
+            else:
+                print(f"Unable to attach {motor_object.fuel_type} motor because other motor is already attached")
         else:
-            print(f"Unable to attach {motor_object.fuel_type} motor because other motor is already attached")
+            print(f"Unable to attach {motor_object.fuel_type} motor because transmission is not attached")
 class Motor:
     def __init__(self, fuel_type):
         self.fuel_type = fuel_type
@@ -29,7 +32,7 @@ class Motor:
             self.transmission_attached = True
             print(f"{gearbox_object.gearbox_type} transmission is successfully attached to the {self.fuel_type} motor")
         else:
-            print(f"Unable to attach{gearbox_object.gearbox_type} transmission "
+            print(f"Unable to attach {gearbox_object.gearbox_type} transmission "
                   f"because other transmission is already attached to the {self.fuel_type} motor")
 
 class Gearbox:
@@ -53,12 +56,13 @@ coupe_chassis = Chassis("Coupe")
 
 #gearbox attachment
 # gearbox_attachment_attempt = gasoline_motor.attach_gearbox(automatic_transmission)
-# gearbox_attachment_attempt1 = gasoline_motor.attach_gearbox(manual_transmission)
-# gearbox_attachment_attempt2 = diesel_motor.attach_gearbox(automatic_transmission)
+# gearbox_attachment_attempt1 = gasoline_motor.attach_gearbox(automatic_transmission)
+gearbox_attachment_attempt2 = diesel_motor.attach_gearbox(automatic_transmission)
 # gearbox_attachment_attempt3 = diesel_motor.attach_gearbox(automatic_transmission)
 
 #motor attachment
 # motor_attachment_attempt = universal_chassis.motor_attachment(gasoline_motor)
 # motor_attachment_attempt4 = universal_chassis.motor_attachment(gasoline_motor)
-motor_attachment_attempt2 = universal_chassis.motor_attachment(natural_gas_motor)
-motor_attachment_attempt3 = universal_chassis.motor_attachment(natural_gas_motor)
+# motor_attachment_attempt2 = universal_chassis.motor_attachment(natural_gas_motor)
+# motor_attachment_attempt3 = universal_chassis.motor_attachment(natural_gas_motor)
+motor_attachment_attempt5 = universal_chassis.motor_attachment(diesel_motor)
