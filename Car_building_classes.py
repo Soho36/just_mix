@@ -1,5 +1,24 @@
+def print_available_parts():
+    print("Available chassis are:")
+    for chassis in Chassis.chassis_instances:
+        print(f"{chassis} chassis")
+    print("-------------------")
+
+    print("Available motors are:")
+    for motor in Motor.motor_instances:
+        print(f"{motor} motor")
+    print("-------------------")
+
+    print("Available transmissions are:")
+    for gearbox in Gearbox.gearbox_instances:
+        print(f"{gearbox} transmission")
+    print("-------------------")
+
+
 class Chassis:
+    chassis_instances = []
     def __init__(self, chassis_type):
+        Chassis.chassis_instances.append(self)
         self.chassis_type = chassis_type
         self.motor_placement = None
         self.motor_attached = False
@@ -18,7 +37,9 @@ class Chassis:
         else:
             print(f"Unable to attach {motor_object.fuel_type} motor because transmission is not attached")
 class Motor:
+    motor_instances = []
     def __init__(self, fuel_type):
+        Motor.motor_instances.append(self)
         self.fuel_type = fuel_type
         self.gearbox_placement = None
         self.transmission_attached = False
@@ -36,8 +57,14 @@ class Motor:
                   f"because other transmission is already attached to the {self.fuel_type} motor")
 
 class Gearbox:
+    gearbox_instances = []
     def __init__(self, gearbox_type):
+        Gearbox.gearbox_instances.append(self)
         self.gearbox_type = gearbox_type
+
+    def __str__(self):
+        return self.gearbox_type
+
 
 
 #motor init
@@ -54,6 +81,9 @@ universal_chassis = Chassis("Universal")
 sedan_chassis = Chassis("Sedan")
 coupe_chassis = Chassis("Coupe")
 
+#available chassis print
+print_available_parts()
+
 #gearbox attachment
 # gearbox_attachment_attempt = gasoline_motor.attach_gearbox(automatic_transmission)
 # gearbox_attachment_attempt1 = gasoline_motor.attach_gearbox(automatic_transmission)
@@ -66,3 +96,5 @@ gearbox_attachment_attempt2 = diesel_motor.attach_gearbox(automatic_transmission
 # motor_attachment_attempt2 = universal_chassis.motor_attachment(natural_gas_motor)
 # motor_attachment_attempt3 = universal_chassis.motor_attachment(natural_gas_motor)
 motor_attachment_attempt5 = universal_chassis.motor_attachment(diesel_motor)
+
+
