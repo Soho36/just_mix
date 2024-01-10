@@ -461,5 +461,4 @@ user_inputs()
 # motor_attachment_attempt5 = universal_chassis.motor_attachment(diesel_motor)
 
 
-#fdfdfdfdf
 
