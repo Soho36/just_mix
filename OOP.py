@@ -726,3 +726,10 @@
 # served_person = queue.pop(0)  # Dequeue
 
 # --------------------------------------------------------------------
+# testarray = [1, 2, 3, 4, 5, 6]
+# testarray.insert(0,7)
+# print(testarray)
+#
+# mydict = {'one': 10, 'three': 3, 'four': 4}
+# lenn = len(mydict)
+# print(lenn)
