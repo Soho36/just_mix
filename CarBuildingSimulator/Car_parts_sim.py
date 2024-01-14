@@ -12,6 +12,7 @@ wrong_input_sound = os.path.join(script_path, "sounds/mixkit-cartoon-clown-fun-n
 bingo_sound = os.path.join(script_path, "sounds/mixkit-animated-small-group-applause-523.wav")
 
 
+#sounds
 def play_start_game():
     playsound(start_game_sound)
 
@@ -82,7 +83,7 @@ def print_current_state():
     global counter_list
     # print("before clear", counter_list)
 
-    if len(counter_list) <= 7:
+    if len(counter_list) <= 8:
         counter_list.clear()     #this one MUST be inside the IF
         # print("after clear", counter_list)
         print("\nCurrent list of assembled parts (you need 9 lines to succeed):")
