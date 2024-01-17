@@ -40,22 +40,22 @@ unvisited = {
     "Kutsehariduskeskus": True
 }
 
-# while any(unvisited.values()) is True:
-unvisited_nodes = (node for node in unvisited if unvisited[node])   #generator object
-unvisited_nodes_list = list(unvisited_nodes)
-current_node = min(unvisited_nodes_list, key=lambda x: distances[x])
+while any(unvisited.values()) is True:
+    unvisited_nodes = (node for node in unvisited if unvisited[node])   #generator object
+    unvisited_nodes_list = list(unvisited_nodes)
+    current_node = min(unvisited_nodes_list, key=lambda x: distances[x])
 
-print("Unvisited nodes: ", unvisited_nodes_list)
-print("Current node: ", current_node)
+    print("Unvisited nodes: ", unvisited_nodes_list)
+    print("Current node: ", current_node)
 
-neighbors_and_weights = checkpoints_graph_weighted[current_node].items()
-print("Neighbors and weights: ", neighbors_and_weights)
+    neighbors_and_weights = checkpoints_graph_weighted[current_node].items()
+    print("Neighbors and weights: ", neighbors_and_weights)
 
-for neighbor, weight in neighbors_and_weights:
-    if distances[current_node] + weight < distances[neighbor]:
-        new_distance = distances[current_node] + weight
-        distances[neighbor] = new_distance
+    for neighbor, weight in neighbors_and_weights:
+        if distances[current_node] + weight < distances[neighbor]:
+            new_distance = distances[current_node] + weight
+            distances[neighbor] = new_distance
 
-unvisited[current_node] = False
+    unvisited[current_node] = False
 
-print(distances)
+print(f"Distances from starting point: {distances}")
