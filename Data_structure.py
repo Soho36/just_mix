@@ -87,11 +87,55 @@
 # Carol is friends with Dave.
 # Dave is friends with Alice.
 
-social_network = {
-    1: [2, 3],    # Alice is friends with Bob (2) and Carol (3)
-    2: [3],      # Bob is friends with Carol (3)
-    3: [4],      # Carol is friends with Dave (4)
-    4: [1]       # Dave is friends with Alice (1)
-}
+# social_network = {
+#     1: [2, 3],    # Alice is friends with Bob (2) and Carol (3)
+#     2: [3],      # Bob is friends with Carol (3)
+#     3: [4],      # Carol is friends with Dave (4)
+#     4: [1]       # Dave is friends with Alice (1)
+# }
 # test
 
+# underground_map = {
+#     "admiralteiskaja": ["sadovaja"],
+#     "sadovaja": ["sennaja", "spasskaja", "admiralteiskaja", "zvenigorodskaja"],
+#     "sennaja": ["sadovaja", "spasskaja"],
+#     "spasskaja": ["sadovaja", "sennaja", "dostoevskaja"],
+#     "dostoevskaja": ["spasskaja", "vladimirskaja"],
+#     "vladimirskaja": ["dostoevskaja", "pushkinskaja"],
+#     "pushkinskaja": ["zvenigorodskaja", "vladimirskaja"],
+#     "zvenigorodskaja": ["pushkinskaja", "sadovaja"]
+# }
+
+# FIND THE SHORTEST WAY
+underground_map_weighted = {
+    "admiralteiskaja": {"sadovaja": 4},
+    "sadovaja": {"sennaja": 4, "spasskaja": 3, "admiralteiskaja": 4, "zvenigorodskaja":5},
+    "sennaja": {"sadovaja": 4, "spasskaja": 4},
+    "spasskaja": {"sadovaja": 3, "sennaja": 4, "dostoevskaja": 6},
+    "dostoevskaja": {"spasskaja": 6, "vladimirskaja": 3},
+    "vladimirskaja": {"dostoevskaja": 3, "pushkinskaja": 4},
+    "pushkinskaja": {"zvenigorodskaja": 3, "vladimirskaja": 4},
+    "zvenigorodskaja": {"pushkinskaja": 3, "sadovaja": 5}
+}
+inf = 1000
+# set distances to infinity
+distnaces = {"admiralteiskaja": 0,
+             "sadovaja": inf,
+             "sennaja": inf,
+             "spasskaja": inf,
+             "zvenigorodskaja": inf,
+             "dostoevskaja": inf,
+             "vladimirskaja": inf,
+             "pushkinskaja": inf,
+             }
+
+# set all nodes as unvisited
+unvisited = {"admiralteiskaja": True,
+             "sadovaja": True,
+             "sennaja": True,
+             "spasskaja": True,
+             "zvenigorodskaja": True,
+             "dostoevskaja": True,
+             "vladimirskaja": True,
+             "pushkinskaja": True,
+             }
