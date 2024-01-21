@@ -33,15 +33,41 @@ class BinaryTree:
         if self.right_node:
             self.right_node.display_hierarchy(level + 1)
 
+
+#TREE TRAVERSAL
+    def pre_order(self):
+        print(self.value)
+
+        if self.left_node is not None:
+            self.left_node.pre_order()
+        if self.right_node is not None:
+            self.right_node.pre_order()
+
+    def post_order(self):
+        if self.left_node is not None:
+            self.left_node.post_order()
+        if self.right_node is not None:
+            self.right_node.post_order()
+        print(self.value)
+
+    def in_order(self):
+        if self.left_node is not None:
+            self.left_node.in_order()
+
+        print(self.value)
+
+        if self.right_node is not None:
+            self.right_node.in_order()
+
 node_1 = BinaryTree("2 root")
 node_2 = BinaryTree("7 left")
 node_3 = BinaryTree("5 right")
 node_4 = BinaryTree("2 left")
 node_5 = BinaryTree("6 right")
-node_6 = BinaryTree("9 right")
+node_6 = BinaryTree("4 left")
 node_7 = BinaryTree("5 left")
 node_8 = BinaryTree("11 right")
-node_9 = BinaryTree("4 left")
+node_9 = BinaryTree("9 right")
 
 node_1.insert_new_left_node(node_2)
 node_1.insert_new_right_node(node_3)
@@ -53,6 +79,11 @@ node_3.insert_new_left_node(node_6)
 node_3.insert_new_left_node(node_9)
 
 node_1.display_hierarchy()
+node_1.pre_order()
+print("*****")
+node_1.post_order()
+print("*****")
+node_1.in_order()
 
 
 
